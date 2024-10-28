@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamix - Events</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Events Page Styling */
+        .events {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .events h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .event-card {
+            display: inline-block;
+            width: 300px;
+            background-color: #1f1f1f;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .event-card h3 {
+            margin: 15px 0;
+        }
+
+        .event-card p {
+            margin: 5px 0;
+        }
+
+        .event-card button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 7px;
+            background-color: #50fa7b;
+            color: #121212;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .event-card button:hover {
+            background-color: #36c76e;
+        }
+
+        /* Apply a full height to the body and html */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Set up a flex container for the body */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Adjust content to fill remaining height */
+        .events {
+            flex: 1; /* Takes up remaining space to push footer down */
+            padding: 50px 20px;
+        }
+
+        footer {
+            width: 100%;
+            position: relative; /* Ensure it stays at the bottom with the flexbox */
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GAMIX</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="games">Games</a></li>
+                <li><a href="events">Events</a></li>
+                <li><a href="community">Community</a></li>
+                <li><a href="contact">Contact</a></li>
+                
+                <li><a href="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-card">
+            <h3>Tournament: Fortnite</h3>
+            <p>Date: 15th October 2024</p>
+            <p>Time: 6:00 PM - 9:00 PM</p>
+            <button onclick="registerEvent('Tournament: Fortnite')">Register</button>
+        </div>
+        <div class="event-card">
+            <h3>Game Night: Legends</h3>
+            <p>Date: 20th October 2024</p>
+            <p>Time: 7:00 PM - 11:00 PM</p>
+            <button onclick="registerEvent('Game Night: Legends')">Register</button>
+        </div>
+        <div class="event-card">
+            <h3>Battle of Titans</h3>
+            <p>Date: 29th October 2024</p>
+            <p>Time: 7:00 PM - 10:00 PM</p>
+            <button onclick="registerEvent('Battle of Titans')">Register</button>
+        </div>
+        
+
+
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gaming Community. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to register for an event
+        function registerEvent(eventName) {
+            alert("You have successfully registered for " + eventName + ".");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamix - Games</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        /* Reset and ensure the height is 100% */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Ensure the entire body uses flexbox */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Container to hold the content */
+        .container {
+            flex: 1;
+            padding-bottom: 60px; /* Add padding to avoid overlap with the footer */
+        }
+
+        /* Games Page Styling */
+        .games-list {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .games-list h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .game-card {
+            display: inline-block;
+            width: 250px;
+            background-color: #1f1f1f;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .game-card img {
+            width: 100%;
+            
+            border-radius: 10px;
+        }
+
+        .game-card h3 {
+            margin: 15px 0;
+        }
+
+        .game-card p {
+            margin: 5px 0;
+        }
+
+        .game-card button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #50fa7b;
+            color: #121212;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .game-card button:hover {
+            background-color: #36c76e;
+        }
+
+        /* Footer Styling */
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GAMIX</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="games">Games</a></li>
+                <li><a href="events">Events</a></li>
+                <li><a href="community">Community</a></li>
+                <li><a href="contact">Contact</a></li>
+                
+                <li><a href="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="games-list">
+        <h2>Our Favorite Games</h2>
+        <div class="game-card">
+            <img src="imgs/pubg1.jpg" alt="Pubg">
+            <h3>Pubg</h3>
+            <p>Genre: Adventure</p>
+            <p>Platform: PC, Console</p>
+            <button onclick="viewGameDetails('Pubg')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/mario1.jpg" alt="Super Mario">
+            <h3>Super Mario</h3>
+            <p>Genre: Adventure</p>
+            <p>Platform: PC, Console</p>
+            <button onclick="viewGameDetails('Super Mario')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/fortnite2.jpg" alt="Fortnite">
+            <h3>Fortnite</h3>
+            <p>Genre: FPS Shooter</p>
+            <p>Platform: PC, Mobile</p>
+            <button onclick="viewGameDetails('Fortnite')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/freefire1.jpg" alt="Free Fire">
+            <h3>Free Fire</h3>
+            <p>Genre: Action</p>
+            <p>Platform: Mobile</p>
+            <button onclick="viewGameDetails('Free Fire')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/cod1.jpg" alt="Call Of Duty">
+            <h3>Call Of Duty</h3>
+            <p>Genre: Shooter</p>
+            <p>Platform: PC, Mobile</p>
+            <button onclick="viewGameDetails('Call Of Duty')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/gta51 (1).jpg" alt="Gta 5">
+            <h3>GTA V</h3>
+            <p>Genre: Open World</p>
+            <p>Platform: PC, PS-5</p>
+            <button onclick="viewGameDetails('Gta 5')">View Details</button>
+        </div>
+
+        <div class="game-card">
+            <img src="imgs/coc1.png" alt="Clash of Clans">
+            <h3>Clash of Clans</h3>
+            <p>Genre: Strategy</p>
+            <p>Platform: Mobile</p>
+            <button onclick="viewGameDetails('Clash of Clans')">View Details</button>
+        </div>
+        <div class="game-card">
+            <img src="imgs/asphalt1 (1).jpg" alt="Asphalt 9 Legends">
+            <h3>Asphalt 9 Legends</h3>
+            <p>Genre: Racing</p>
+            <p>Platform: Mobile, PC</p>
+            <button onclick="viewGameDetails('Asphalt 9 Legends')">View Details</button>
+        </div>
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gaming Community. All rights reserved.</p>
+    </footer>
+
+    <script >
+        // Function to view more details about a specific game
+        function viewGameDetails(gameName) {
+            alert("More details about " + gameName + " will be available soon.");
+        }
+
+    </script>
+</body>
+</html>

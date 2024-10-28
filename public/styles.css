@@ -1,0 +1,123 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling the Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+}
+
+header .logo {
+    font-size: 24px;
+    color: #50fa7b;
+    margin-left: 2%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #50fa7b;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('imgs/freefire1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    
+    background-color: #50fa7b;
+    color: #121212;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #36c76e;
+}
+
+/* Featured Games */
+.featured-games {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.featured-games h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.featured-games .game {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.featured-games .game img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.featured-games .game h3 {
+    margin: 15px 0;
+}
+
+.featured-games .game p {
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1f1f1f;
+}

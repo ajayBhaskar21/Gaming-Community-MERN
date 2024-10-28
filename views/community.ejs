@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamix - Community</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Community Page Styling */
+        .community-intro {
+            padding: 50px 20px;
+            text-align: center;
+            background-color: #292929;
+        }
+
+        .community-intro h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .community-intro p {
+            font-size: 24px;
+        }
+
+        /* Member Profiles */
+        .member-profiles {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .member-profiles h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .member-card {
+            display: inline-block;
+            width: 250px;
+            background-color: #1f1f1f;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .member-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .member-card h3 {
+            margin: 15px 0;
+        }
+
+        .member-card p {
+            margin: 5px 0;
+        }
+
+        .member-card button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #50fa7b;
+            color: #121212;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .member-card button:hover {
+            background-color: #36c76e;
+        }
+
+        /* Gallery */
+        .gallery {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .gallery h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            display: inline-block;
+            width: 200px;
+            margin: 15px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GAMIX</div>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="games">Games</a></li>
+                <li><a href="events">Events</a></li>
+                <li><a href="community">Community</a></li>
+                <li><a href="contact">Contact</a></li>
+                
+                <li><a href="logout">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="community-intro">
+        <h1>Welcome to Our Community</h1>
+        <p>Meet fellow gamers, join discussions, and share your passion for gaming!</p>
+    </section>
+
+    <section class="member-profiles">
+        <h2>Top Contributors</h2>
+        <div class="member-card">
+            <img src="member1.jpg" alt="Member 1">
+            <h3>Member 1</h3>
+            <p>Favorite Game: Game 1</p>
+            <button onclick="viewProfile('Member 1')">View Profile</button>
+        </div>
+        <div class="member-card">
+            <img src="member2.jpg" alt="Member 2">
+            <h3>Member 2</h3>
+            <p>Favorite Game: Game 2</p>
+            <button onclick="viewProfile('Member 2')">View Profile</button>
+        </div>
+        <!-- Add more members as needed -->
+    </section>
+
+    <section class="gallery">
+        <h2>Community Gallery</h2>
+        <div class="gallery-item">
+            <img src="screenshot1.jpg" alt="Screenshot 1">
+        </div>
+        <div class="gallery-item">
+            <img src="screenshot2.jpg" alt="Screenshot 2">
+        </div>
+        <!-- Add more gallery items as needed -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Gaming Community. All rights reserved.</p>
+    </footer>
+
+    <script >
+        // Function to view more details about a community member
+        function viewProfile(memberName) {
+            alert("More details about " + memberName + " will be available soon.");
+        }
+
+    </script>
+</body>
+</html>
