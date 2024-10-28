@@ -6,6 +6,15 @@
     <title>Gamix - Games</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.game-details {
+    animation: fadeIn 0.5s ease-in-out;
+    margin-top: 10px;
+}
 
         /* Reset and ensure the height is 100% */
         body, html {
@@ -107,65 +116,73 @@
 
     <section class="games-list">
         <h2>Our Favorite Games</h2>
-        <div class="game-card">
+        
+        <div class="game-card" id="pubg">
             <img src="imgs/pubg1.jpg" alt="Pubg">
             <h3>Pubg</h3>
             <p>Genre: Adventure</p>
             <p>Platform: PC, Console</p>
-            <button onclick="viewGameDetails('Pubg')">View Details</button>
+            <button onclick="viewGameDetails('pubg')">View Details</button>
         </div>
-        <div class="game-card">
+        
+        <div class="game-card" id="mario">
             <img src="imgs/mario1.jpg" alt="Super Mario">
             <h3>Super Mario</h3>
             <p>Genre: Adventure</p>
             <p>Platform: PC, Console</p>
-            <button onclick="viewGameDetails('Super Mario')">View Details</button>
+            <button onclick="viewGameDetails('mario')">View Details</button>
         </div>
-        <div class="game-card">
+        
+        <div class="game-card" id="fortnite">
             <img src="imgs/fortnite2.jpg" alt="Fortnite">
             <h3>Fortnite</h3>
             <p>Genre: FPS Shooter</p>
             <p>Platform: PC, Mobile</p>
-            <button onclick="viewGameDetails('Fortnite')">View Details</button>
+            <button onclick="viewGameDetails('fortnite')">View Details</button>
         </div>
-        <div class="game-card">
+        
+        <div class="game-card" id="freefire">
             <img src="imgs/freefire1.jpg" alt="Free Fire">
             <h3>Free Fire</h3>
             <p>Genre: Action</p>
             <p>Platform: Mobile</p>
-            <button onclick="viewGameDetails('Free Fire')">View Details</button>
+            <button onclick="viewGameDetails('freefire')">View Details</button>
         </div>
-        <div class="game-card">
+        
+        <div class="game-card" id="cod">
             <img src="imgs/cod1.jpg" alt="Call Of Duty">
             <h3>Call Of Duty</h3>
             <p>Genre: Shooter</p>
             <p>Platform: PC, Mobile</p>
-            <button onclick="viewGameDetails('Call Of Duty')">View Details</button>
+            <button onclick="viewGameDetails('cod')">View Details</button>
         </div>
-        <div class="game-card">
-            <img src="imgs/gta51 (1).jpg" alt="Gta 5">
+        
+        <div class="game-card" id="gta">
+            <img src="imgs/gta51.jpg" alt="GTA V">
             <h3>GTA V</h3>
             <p>Genre: Open World</p>
             <p>Platform: PC, PS-5</p>
-            <button onclick="viewGameDetails('Gta 5')">View Details</button>
+            <button onclick="viewGameDetails('gta')">View Details</button>
         </div>
-
-        <div class="game-card">
+        
+        <div class="game-card" id="clashofclans">
             <img src="imgs/coc1.png" alt="Clash of Clans">
             <h3>Clash of Clans</h3>
             <p>Genre: Strategy</p>
             <p>Platform: Mobile</p>
-            <button onclick="viewGameDetails('Clash of Clans')">View Details</button>
+            <button onclick="viewGameDetails('clashofclans')">View Details</button>
         </div>
-        <div class="game-card">
-            <img src="imgs/asphalt1 (1).jpg" alt="Asphalt 9 Legends">
+        
+        <div class="game-card" id="asphalt9">
+            <img src="imgs/asphalt1.jpg" alt="Asphalt 9 Legends">
             <h3>Asphalt 9 Legends</h3>
             <p>Genre: Racing</p>
             <p>Platform: Mobile, PC</p>
-            <button onclick="viewGameDetails('Asphalt 9 Legends')">View Details</button>
+            <button onclick="viewGameDetails('asphalt9')">View Details</button>
         </div>
-
+        
     </section>
+    
 
     <footer>
         <p>&copy; 2024 Gaming Community. All rights reserved.</p>
@@ -173,9 +190,83 @@
 
     <script >
         // Function to view more details about a specific game
-        function viewGameDetails(gameName) {
-            alert("More details about " + gameName + " will be available soon.");
-        }
+       // Predefined details for each game
+// Predefined details for each game
+const gameDetails = {
+    "pubg": { 
+        size: "2 GB", 
+        rating: "4.5", 
+        installs: "500M+" 
+    },
+    "mario": { 
+        size: "500 MB", 
+        rating: "4.3", 
+        installs: "1B+" 
+    },
+    "fortnite": { 
+        size: "10 GB", 
+        rating: "4.7", 
+        installs: "350M+" 
+    },
+    "freefire": { 
+        size: "1.5 GB", 
+        rating: "4.2", 
+        installs: "1B+" 
+    },
+    "cod": { 
+        size: "5 GB", 
+        rating: "4.4", 
+        installs: "250M+" 
+    },
+    "gta": { 
+        size: "65 GB", 
+        rating: "4.8", 
+        installs: "150M+" 
+    },
+    "clashofclans": { 
+        size: "250 MB", 
+        rating: "4.6", 
+        installs: "500M+" 
+    },
+    "asphalt9": { 
+        size: "1.8 GB", 
+        rating: "4.5", 
+        installs: "100M+" 
+    }
+};
+
+
+function viewGameDetails(gameId) {
+    // Select the game card and prevent further clicks if details are already displayed
+    const gameCard = document.getElementById(gameId);
+    if (gameCard.classList.contains("details-view")) return;
+
+    // Add 'details-view' class to prevent further clicks until reset
+    gameCard.classList.add("details-view");
+
+    // Create a div to display details with animation
+    const detailsDiv = document.createElement("div");
+    detailsDiv.className = "game-details";
+    detailsDiv.style.animation = "fadeIn 0.5s ease-in-out";
+
+    // Get details from predefined object
+    const details = gameDetails[gameId];
+    detailsDiv.innerHTML = `
+        <p>Size: ${details.size}</p>
+        <p>Rating: ${details.rating}</p>
+        <p>Installs: ${details.installs}</p>
+    `;
+    
+    // Append the details div to game card without removing the existing content
+    gameCard.appendChild(detailsDiv);
+
+    // Remove details after 4 seconds and reset the view
+    setTimeout(() => {
+        gameCard.removeChild(detailsDiv);
+        gameCard.classList.remove("details-view");  // Allow new clicks
+    }, 1000);
+}
+
 
     </script>
 </body>
